@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-05T19:44:28 IST" name="Suite" finished-at="2022-12-05T19:44:52 IST" duration-ms="24269">
+  <suite started-at="2023-12-19T08:14:28 IST" name="Default suite" finished-at="2023-12-19T08:14:40 IST" duration-ms="11889">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestNgRunner@76b1e9b8]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestNgRunner@7068e664]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2022-12-05T19:44:28 IST" name="Test" finished-at="2022-12-05T19:44:52 IST" duration-ms="24269">
+    <test started-at="2023-12-19T08:14:28 IST" name="Default test" finished-at="2023-12-19T08:14:40 IST" duration-ms="11889">
       <class name="runner.TestNgRunner">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestNgRunner@76b1e9b8]" started-at="2022-12-05T19:44:28 IST" name="setUpClass" finished-at="2022-12-05T19:44:28 IST" duration-ms="291" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestNgRunner@7068e664]" started-at="2023-12-19T08:14:28 IST" name="setUpClass" finished-at="2023-12-19T08:14:29 IST" duration-ms="421" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestNgRunner@76b1e9b8]" started-at="2022-12-05T19:44:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-12-05T19:44:52 IST" duration-ms="23930" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestNgRunner@7068e664]" started-at="2023-12-19T08:14:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-19T08:14:40 IST" duration-ms="11385" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -27,14 +27,30 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy21.click(Unknown Source)
+at pagelibrary.CalculatorPageLib.getHomeLink(CalculatorPageLib.java:57)
+at businesslib.CalculatorBusinessLib.verifyCalculatorFunctionality(CalculatorBusinessLib.java:50)
+at stepdefination.HomeLoanCalculatorTest.perform_the_the_calculator_functionality_with_valid_data(HomeLoanCalculatorTest.java:26)
+at ✽.Perform the the calculator functionality with Valid data(file:///C:/Users/Chandan/CalculatorFramework/Feature/CucumberTree.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestNgRunner@76b1e9b8]" started-at="2022-12-05T19:44:52 IST" name="tearDownClass" finished-at="2022-12-05T19:44:52 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestNgRunner@7068e664]" started-at="2023-12-19T08:14:40 IST" name="tearDownClass" finished-at="2023-12-19T08:14:40 IST" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- runner.TestNgRunner -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

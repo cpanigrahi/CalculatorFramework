@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BrowserLib {
 
 	public static WebDriver driver;
@@ -15,7 +17,7 @@ public class BrowserLib {
 
 		if (browser.equalsIgnoreCase("firefox")) {
 
-			System.setProperty("webdriver.gecko.driver", "./geckodriver.exe");
+			WebDriverManager.firefoxdriver().setup();
 
 			driver = new FirefoxDriver();
 
@@ -25,7 +27,7 @@ public class BrowserLib {
 
 		} else {
 
-			System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 
 			ChromeOptions options = new ChromeOptions();
 

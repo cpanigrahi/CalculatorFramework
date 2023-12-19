@@ -1,6 +1,13 @@
 package pagelibrary;
 
-public class CalculatorPageLib {
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import utillibrary.BrowserLib;
+
+public class CalculatorPageLib extends BrowserLib {
 
 	private String singleButton = "//label[@for='application_type_single']";
 
@@ -35,6 +42,21 @@ public class CalculatorPageLib {
 	private String homeLoanLink = "//span[@class='sprite home-loans']";
 
 	private String calculateBorrowingLink = "//a[text()='Calculate borrowing power']";
+
+
+	@FindBy(xpath = "//span[@class='sprite home-loans']")
+	@CacheLookup
+	WebElement homeLink;
+
+	public void getHomeLink() {
+		homeLink.click();
+	}
+
+	public CalculatorPageLib() {
+
+		PageFactory.initElements(BrowserLib.driver, this);
+
+	}
 
 	public String getCalculateBorrowingLink() {
 		return calculateBorrowingLink;
